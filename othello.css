@@ -35,8 +35,6 @@ td {
 }
 
 
-
-
 .testing {
     background: linear-gradient(to bottom right, Black, #565656);
     box-shadow: 1px 1px 6px;
@@ -56,7 +54,6 @@ td {
     position:fixed;
     top:50%;
     transform: translate(0%, -50%);   
-  
 }
 
 #normalMode {
@@ -68,8 +65,8 @@ td {
     padding: 10px 15px;
     cursor: pointer;
     border:3px black;
-
 }
+
 #AIMode {
     position:absolute;
     top:7.5%;
@@ -78,6 +75,5 @@ td {
     text-align: center;
     padding: 10px 15px;
     cursor: pointer;
-
 }
 
