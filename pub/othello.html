@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reversi</title>
+    <link rel="stylesheet" href="othello.css">
+</head>
+<body>
+    <div id="changeMode">
+        <h1 id="turn">Currently playing: Black </h1>
+        <h2 id="gameMode">Gamemode: 2-Player Mode </h2>
+        <h2 id= "normalMode" onclick="setTimeout(TwoPlayerMode,2000)">2-Player Mode</h2>
+        <h2 id = "AIMode" onclick = "AIMode()">AI Mode</h2>
+    </div>
+    
+    <div id = "scoreboard">
+        <h1 id = "score">Scoreboard:</h2> 
+        <h2 id ="playerOne">Black: 2</h2>
+        <h2 id ="playerTwo">White: 2</h2>
+    </div>
+        
+    <table class = "center">
+        <tr>
+            <td id = "00" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "01" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "02" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "03" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "04" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "05" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "06" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "07" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+        </tr>
+        <tr>
+            <td id = "10" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "11" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "12" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "13" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "14" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "15" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "16" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "17" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+        </tr>
+        <tr>
+            <td id = "20" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "21" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "22" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "23" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "24" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "25" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>
+            <td id = "26" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>  
+            <td id = "27" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+        </tr>
+        <tr>
+            <td id = "30" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "31" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "32" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "33" onclick="gameFunction(this.getAttribute('id'))"><p class = "White" ></p></td> 
+            <td id = "34" onclick="gameFunction(this.getAttribute('id'))"><p class = "Black" ></p></td> 
+            <td id = "35" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "36" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "37" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+        </tr>
+        <tr> 
+            <td id = "40" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "41" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "42" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "43" onclick="gameFunction(this.getAttribute('id'))"><p class = "Black" ></p></td> 
+            <td id = "44" onclick="gameFunction(this.getAttribute('id'))"><p class = "White" ></p></td> 
+            <td id = "45" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "46" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "47" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>    
+        </tr>
+        <tr>
+            <td id = "50"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "51"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "52"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "53"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "54"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "55"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "56"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "57"onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+        </tr>
+        <tr>
+            <td id = "60" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "61" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "62" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "63" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "64" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "65" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td>  
+            <td id = "66" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "67" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+        </tr>
+        <tr>
+            <td id = "70" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "71" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "72" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "73" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "74" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "75" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "76" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+            <td id = "77" onclick="gameFunction(this.getAttribute('id'))"><p class = "empty" ></p></td> 
+        </tr>
+    </table>
+    <script src ="othello.js"></script>
+</body>
+</html>
