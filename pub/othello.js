@@ -4,7 +4,7 @@ var turn =  'Black';
 var createdGameBoard = false;
 var gameBoard;
 var playAI = false;
-//var numberOfEasyMoves=15;
+
 //prevents clicking twice to replace AI color turn.
 var playerColor = 'black';
 
@@ -219,7 +219,6 @@ function ComputerPlay(color) {
         while(isValidMove(gameBoard,turn)) {
         
         currentTurn = turn;
-        //ERROR HERE******//
         setTimeout(function() {computerPlayTurn(currentTurn) },1000);
 
         //check if opposing player can play
@@ -460,55 +459,43 @@ function checkLegalInDirection(board, row, col, deltaRow, deltaCol, color){
 
 function checkAllLegalDirections(board, row, col, color) {
 
-
   deltaRow = -1;
   deltaCol = -1;
-
 
   legalNorthWest = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
   deltaRow = -1;
   deltaCol = 0;
 
- 
-
   legalNorth = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
-
 
   deltaRow = -1;
   deltaCol = 1;
 
-
   legalNorthEast = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
-
 
   deltaRow = 0;
   deltaCol = -1;
-
 
   legalWest = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
   deltaRow = 0;
   deltaCol = 1;
 
-
   legalEast = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
   deltaRow = 1;
   deltaCol = -1;
-
 
   legalBottomWest = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
   deltaRow = 1;
   deltaCol = 0;
 
-
   legalBottom = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
   deltaRow = 1;
   deltaCol = 1;
-
 
   legalBottomEast = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
 
@@ -567,7 +554,7 @@ function flipTileInDirection(board, row, col, deltaRow, deltaCol) {
     board[newRow][newCol].color = turn;
     newRow += deltaRow;
     newCol += deltaCol;
-}
+  }
 }
 
 function flipTileDirections(board, row, col, color) {
@@ -623,7 +610,6 @@ function flipTileDirections(board, row, col, color) {
   deltaRow = 1;
   deltaCol = 1;
 
-
   legalBottomEast = checkLegalInDirection(board, row, col, deltaRow, deltaCol, color);
   if (legalBottomEast)
     flipTileInDirection(board, row, col, deltaRow, deltaCol);
@@ -651,7 +637,6 @@ function gameFunction(clicked_id) {
   }
 
   //accessing row,col position corresponding to clicked element
-  
   row = getRow(clicked_id, gameBoard);
   column = getColumn(clicked_id, gameBoard);
 
